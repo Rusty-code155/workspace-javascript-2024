@@ -11,9 +11,9 @@ var hoursNow = today.getHours();
 // modify the code so that your code display "Good afternoon" whereas time is from 12:00pm to 6:00pm
 var greetings = "";
 if (hoursNow <= 12){
-  greetings = "Good Morning";
+  greetings = " Good Morning";
 }else{
-  greetings = "Good Evening";
+  greetings = "Good Afternoon";
 }
 
 
