@@ -44,6 +44,14 @@
             var b = 3;
             var c = a+b;
             var d = a%b
+            console.log(typeof a)
+            const message = "great";
+            let greeting="Hi";
+            //message="hello";
+            if (true){
+                let greeting = "ok";
+            }
+            console.log
 
             </script>
 
@@ -56,7 +64,8 @@
             <script> document.write("<img src=\"img/die1.png\">");</script>
             <p> Write a table to the page </p>
             <script>
-                document.write("<table border = \"1\"> <tr> </tr> </table")
+               // document.write("<table border = \"1\"> <tr> </tr> </table")
+                    
             </script>
         </div>
 
@@ -84,7 +93,15 @@
             <p id="p2"> Paragraph Number two </p>
             <p id="p3"> Paragraph Number three </p>
             <p>Please write JavaScript code to change the content of each paragraph.​
-            <p>
+            <script>
+                //change the first paragraph
+                const pOne = document.getElementById("p1");
+                pOne.innerHTML = "<b>I changed</b>";
+                const test = document.getElementById("p2")
+                test.innerHTML = "I don't know why we are doing this"
+                const pTwo = document.getElementById("p3")
+
+            </script>
 
 
         </div>
@@ -94,13 +111,21 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
-
-
+                const input1 = document.getElementsByName('num1')[0];
+                console.log("get the first input "+ input1.value);
+                const input2 = document.getElementsByName('num2')[0];
+                console.log("get the second input "+ input2.value);
+                var n1= parseFloat(input1.value);
+                var n2= parseFloat(input2.value);
+                var n3 = n1+n2;
+                  const resultL = document.getElementById("result");
+             resultL.innerHTML = " " + n1 +" + "+n2 + " = " + n3;
                 }
             </script>
+           
             <p> <input type="text" name="num1" /> + <input type="text" name="num2">
                 <input type="button" value="=" onclick="calculate();">
-                <label id="result"> ? </label>
+                <label id="result">  </label>
             </p>
 
         </div>
