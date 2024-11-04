@@ -203,7 +203,8 @@
             {
                 const codE =document.getElementById('code');
                 const htmlcodeE = document.getElementById('htmlcode');
-                htmlcodeE.innerHTML = codE.textContent;
+                console.log(codE.value);
+                htmlcodeE.innerHTML = codE.value;
             }
             document.getElementById('tryit').addEventListener('click',convertHTML)
             </script>
@@ -229,8 +230,42 @@
             </p>
 
             <script type="text/javascript">
+                
 
+                //event handlers
+                function getprices()
+                {
+                    //get element
+                var year =document.getElementById('year');
+                var condition =document.getElementById('condition');
+                    console.log(year.value);
+                    console.log(year.selectedIndex);
+                    if (year.value==2003 && condition.value== 'Fair')
+                    {
+                        price=2000;
+                    }
+                    if (year.value==2003 && condition.value== 'Good')
+                    {
+                        price=1500;
+                    }
+                    if(year.selectedIndex==1)
+                    {
+                        if(condition.selectedIndex==0)
+                        {
+                            price=3000;
+                        }
+                        else
+                        {
+                            price=2000;
+                        }
+                    }
+                    document.getElementById("price").innerHTML="The price is <b>" + price +"</b>";
+                }
+                //add events
+                year.addEventListener('change', getprices,false);
+                condition.addEventListener('change', getprices,false);
 
+                //
 
             </script>
 
@@ -241,7 +276,37 @@
             <p> Choose your favorite theme(warm, cool, hot)
                 <input type="text" id="theme">
             </p>
+            <script>
+                //get element and add event listener
+               var theme= document.getElementById('theme');
+                theme.addEventListener('blur', gettheme,false);
+                //action
+                function gettheme()
+                {
+                    var themevalue=document.getElementById('theme').value;
+                    switch (themevalue)
+                    {
+                        case "warm":
+                            document.body.style.backgroundColor ="yellow";
+                            break;
+                        default:
+                            alert("please enter a valid theme");
+                        case "hot":
+                            document.body.style.backgroundColor ="red";
+                            break;
+                        case "cool":
+                            document.body.style.backgroundColor ="blue";
+                            break;
+                        case "cold":
+                            document.body.style.backgroundColor ="black";
+                            break;
+                        case "dreary":
+                            document.body.style.backgroundColor ="gray";
+                    }
+                }
 
+
+            </script>
         </div>
 
 
