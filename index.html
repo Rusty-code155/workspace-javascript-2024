@@ -138,19 +138,24 @@
                         <input type="text" id="cName">
                     </label>
                 </p>
+                
             </form>
             <script>
                 function welcome()
                 {
-
+                    const Namecheck = document.getElementById("cName");
+                    var newmessage= "Welcome " + Namecheck.value + " to the system!";
+                    // put the message back
+                    document.getElementById('checkmessage').textContent = newmessage;
                 }
                 //Binding --- register the event
                 const nameE = document.getElementById('cName');
+                nameE.addEventListener('blur', welcome);
             </script>
                 <p id="message">
 
                 </p>
-
+                <p id="checkmessage"></p>
                 <p>
                     <label> Email:
                         <input type="text" id="cEmail">
@@ -163,8 +168,21 @@
         <div class="practice">
             <h1> Practice - Calculate Square</h1>
             Calculating Square:
-            <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
+            <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
+            <label id="squareresult"> ? </label>
+            <script>
+                function dosquare()
+                 {
+                    const squarE = document.getElementById('squarenum')
+                    var numbersq= parseInt (squarE.value);
+                    console.log("The base number is "+numbersq);
+                    var newnum = numbersq*numbersq;
+                    document.getElementById('squareresult').textContent= " "+ newnum;
+                 }
+                 const squarE = document.getElementById("squarenum");
+                 squarE.addEventListener('change',dosquare);
+
+            </script>
 
         </div>
 
@@ -180,7 +198,15 @@
 
             <div id="message"> 
             </div>
-
+            <script>
+            function convertHTML()
+            {
+                const codE =document.getElementById('code');
+                const htmlcodeE = document.getElementById('htmlcode');
+                htmlcodeE.innerHTML = codE.textContent;
+            }
+            document.getElementById('tryit').addEventListener('click',convertHTML)
+            </script>
 
         </div>
 

@@ -5,7 +5,7 @@ console.log("spanE1 -"+spanE1);
 console.log("spanE2 -"+spanE2 )
 // element --- property
 let n1= parseInt( spanE1.textContent);
-let n2= ( spanE2.textContent);
+let n2= parseInt( spanE2.textContent);
 console.log(typeof n1);
 console.log(typeof n2);
 // var num1 = parseInt(document.getElementById('n1').textContent); 
