@@ -336,6 +336,38 @@
 
             </p>
 
+<script>
+    function getpremium(){
+        var base=10;
+        var coverage = document.querySelector('input[value="coverage"]:checked').value;
+        var ageindex = document.querySelector('#agegroup').selectedIndex;
+        console.log("The coverage is "+coverage+ " age "+ageindex)
+        switch(ageindex)
+        {
+            case 0: agefactor=0.08
+            break;
+            default:break;
+            case 1: agefactor=0.9
+            break;
+            case 2: agefactor=0.11
+            break;
+            case 3: agefactor=0.17
+            break;
+        }
+        // calculation
+        var Premium =base + parseFloat(coverage)/1000*agefactor;
+        //display in paragraph # result ---using querySelector
+        
+        
+
+
+
+
+    }
+    var bE = document.querySelector('input[value="Check Premium"]');
+    console.log(bE);
+</script>
+
         </div>
 
 
